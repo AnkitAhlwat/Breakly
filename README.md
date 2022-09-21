@@ -6,7 +6,7 @@
 
 ## General Info
 This browser based web application to ...
-* Hi I'm Cassidy, i am excited for this project as we will explore mental health
+* Hi I'm Cassidy, i am excited for this project as we will explore mental health.
 
 ## Technologies
 Technologies used for this project:
