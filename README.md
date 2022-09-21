@@ -6,13 +6,14 @@
 
 ## General Info
 This browser based web application to ...
-	
+* Hi I'm Cassidy, i am excited for this project as we will explore mental health
+
 ## Technologies
 Technologies used for this project:
 * HTML, CSS
 * JavaScript
 * Bootstrap 
-* ...
+* 
 	
 ## Content
 Content of the project folder:
