@@ -8,6 +8,9 @@
 
 This browser based web application to is to help users provide much needed mental breaks.
 
+* Hi I'm Ankit, I am really excited for this project because I would like to see how to resolve important issues.
+* Hi I'm Patty, I'm excited for this project because I care about the issue we are trying to tackle!
+
 ## Technologies
 
 Technologies used for this project:
@@ -16,6 +19,11 @@ Technologies used for this project:
 * JavaScript
 * Bootstrap
 * ...
+<<<<<<< HEAD
+
+=======
+
+>>>>>>> 37d196a4e1ee0d8a1e63315f42fd317dd7e7a251
 
 ## Content
 
