@@ -1,5 +1,16 @@
 <nav class="navbar navbar-dark bg-dark py-3 justify-content-between" style="padding-left:5%; padding-right:5%">
-    <i class="material-symbols-outlined md-36">potted_plant</i>
+    <a style="background:none; border: none;" class="btn btn-primary" href="main.html" role="button"><i
+            class="material-symbols-outlined md-36">potted_plant</i></a>
+
     <span class="navbar-text text-light" style="font-size:x-large">Breakly</span>
-    <i class="material-symbols-outlined md-36">account_circle</i>
+
+    <div class="dropdown">
+        <button style="background:none; border:none;" class="btn btn-secondary" type="button" id="dropdownMenuButton"
+            data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="material-symbols-outlined md-36">account_circle</i>
+        </button>
+        <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="#">Logout</a>
+        </div>
+    </div>
 </nav>
