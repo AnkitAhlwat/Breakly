@@ -40,6 +40,7 @@
     <link
         href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp|material-symbols-outlined"
         rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 
 </head>
 
@@ -56,8 +57,22 @@
     <!-- the body of your page goes here -->
     <!-- stuff -->
 
+    <div id="login_block">
+        <div class="container">
+            <div class="px-4 py-5 my-5 text-center">
+                <h1 class="display-5 fw-bold">Hello User!</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4" id="button">Take a break today?</p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                        <input type="submit" value="Login!" id="login_button">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div id="firebaseui-auth-container"></div>
-    <div id="loader">Loading...</div>
     <!-- our own footer goes here-->
     <nav id="footerplaceholder">
 

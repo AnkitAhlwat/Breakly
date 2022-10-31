@@ -1,3 +1,5 @@
+
+
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
@@ -33,4 +35,14 @@ var uiConfig = {
     privacyPolicyUrl: '<your-privacy-policy-url>'
 };
 
-ui.start('#firebaseui-auth-container', uiConfig);
+function login_option() {
+    console.log("test2");
+    $('#login_block').css('display', 'none');
+    ui.start('#firebaseui-auth-container', uiConfig);
+
+}
+function setup() {
+    console.log("test");
+    $("#login_button").click(login_option);
+}
+$(document).ready(setup)
