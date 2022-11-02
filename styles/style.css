@@ -22,7 +22,16 @@
      font-size: 48px;
  }
 
- #reminder_button{
-    color: white;
-    
+ #reminder_button {
+     color: white;
+     text-decoration: none;
+ }
+
+ #form-box {
+     margin: 10px;
+ }
+
+ .form-group {
+     margin-top: 10px;
+     margin-bottom: 10px;
  }
