@@ -12,10 +12,16 @@ var uiConfig = {
                     name: user.displayName,                    //"users" collection
                     email: user.email,                         //with authenticated user's ID (user.uid)
                     country: "Canada",                      //optional default profile info      
-                    school: "BCIT"                          //optional default profile info
+                    school: "BCIT",
+                    reminders: {
+                        start_time: '0',
+                        interval: '0',
+                        end_time: '0'
+                    },
+                    personal_goal: '0',                       //optional default profile info
                 }).then(function () {
                     console.log("New user added to firestore");
-                    window.location.assign("user_homepage.html");       //re-direct to main.html after signup
+                    window.location.assign("main.html");       //re-direct to main.html after signup
                 })
                     .catch(function (error) {
                         console.log("Error adding new user: " + error);
@@ -33,7 +39,7 @@ var uiConfig = {
     },
     // Will use popup for IDP Providers sign-in flow instead of the default, redirect.
     signInFlow: 'popup',
-    signInSuccessUrl: 'user_homepage.html',
+    signInSuccessUrl: 'main.html',
     signInOptions: [
         // Leave the lines as is for the providers you want to offer your users.
         // firebase.auth.GoogleAuthProvider.PROVIDER_ID,

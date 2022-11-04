@@ -11,17 +11,4 @@ time.get(reminders['start_time']).then(function (doc) {
     var interval = time.get(reminders['interval']).then()
     var new_break_time = start_time + interval
     time.update(reminders['start_time'], new_break_time)
-
-    ///writing data from forms into reminder field
-    db.collection('users').doc('user.uid').set({
-        reminders: {
-            start_time: $('#start_time').val(),
-            interval: $('#interval').val(),
-            end_time: $('#end_time').val()
-        }
-    })
-
-    ///writing data from forms into personal goal field
-    db.collection('users').doc('user.uid').set({
-        personal_goal: $('#personal_goal').val()
-    }
+})

@@ -56,7 +56,7 @@
         <div id="form-box">
             <div class="form-group">
                 <label for="exampleFormControlSelect1">I want a break every...</label>
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="interval">
                     <option>15 min</option>
                     <option>30 min</option>
                     <option>45 min</option>
@@ -66,7 +66,7 @@
             <div class="row">
                 <div class="form-group col-lg-6">
                     <label for="exampleFormControlSelect1">Starting at...</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="start_time">
                         <option>8:00 AM</option>
                         <option>8:30 AM</option>
                         <option>9:00 AM </option>
@@ -75,7 +75,7 @@
                 </div>
                 <div class="form-group col-lg-6">
                     <label for="exampleFormControlSelect1">Ending at...</label>
-                    <select class="form-control" id="exampleFormControlSelect1">
+                    <select class="form-control" id="end_time">
                         <option>5:00 PM</option>
                         <option>5:30 PM</option>
                         <option>6:00 PM</option>
@@ -85,14 +85,15 @@
             </div>
 
             <div class="form-group">
-                <label for="exampleFormControlTextarea1">My personal goal for the day is...</label>
+                <label for="exampleFormControlTextarea1">My personal goal for the day is to take</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
             </div>
         </div>
         <div class="d-grid">
             <div style="text-align:center">
-                <button style="width:80%; margin:0 auto" class=" btn btn-dark btn-lg" type="submit"><a
-                        style="text-decoration:none; color:white" href="user_homepage.html">Submit</a></button>
+                <button id="submit_button" style="width:80%; margin:0 auto" class=" btn btn-dark btn-lg"
+                    type="submit"><a style="text-decoration:none; color:white"
+                        href="user_homepage.html">Submit</a></button>
             </div>
         </div>
     </form>
@@ -108,8 +109,11 @@
 
     <!-- Link to scripts of your own -->
     <!-- <script src="./scripts/script.js"></script> -->
+    <script src="./scripts/firebaseAPI_TEAM10.js"></script>
     <script src="./scripts/load_skeleton.js"></script>
     <script src="./scripts/main.js"></script>
+    <script src="./scripts/setreminder.js"></script>
+    <script src="scripts/authentication.js"></script>
 
 
 </body>
