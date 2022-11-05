@@ -1,7 +1,7 @@
 var user = firebase.auth().currentUser;
 
-function write_data() {
-    console.log("hi");
+function write_data(event) {
+    event.preventDefault();
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
@@ -23,9 +23,13 @@ function write_data() {
                 },
                 personal_goal: p,
             })
-                .then(function () {
-                    window.location.href = 'user_homepage.html';
-                })
+                .then(
+                    function () {
+                        window.location.href = 'user_homepage.html';
+                    },
+                    function (error) {
+                        console.error("Error writing document: ", error);
+                    });
         }
     })
 }
