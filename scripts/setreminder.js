@@ -9,6 +9,7 @@ function write_data(event) {
             y = $('#interval').val();
             z = $('#end_time').val();
             p = $('#personal_goal').val();
+            p = parseInt(p);
             console.log(x)
             console.log(y)
             console.log(z)

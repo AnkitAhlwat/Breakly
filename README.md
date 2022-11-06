@@ -19,10 +19,11 @@ Technologies used for this project:
 * HTML, CSS
 * JavaScript
 <<<<<<< HEAD
-* Bootstrap 
-* 
-	
+* Bootstrap
+*
+ 
 =======
+
 * Bootstrap
 * ...
 <<<<<<< HEAD
@@ -32,6 +33,7 @@ Technologies used for this project:
 >>>>>>> 37d196a4e1ee0d8a1e63315f42fd317dd7e7a251
 
 >>>>>>> 7a8306939df73dfbee025894e918bb8ff95619ea
+
 ## Content
 
 Content of the project folder:
