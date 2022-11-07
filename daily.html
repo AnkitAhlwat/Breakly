@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
@@ -35,10 +36,6 @@
     <!-- Link to styles of your own -->
     <link rel="stylesheet" href="./styles/style.css">
 
-    <style>
-
-    </style>
-
 </head>
 
 <body>
@@ -51,7 +48,17 @@
 
 
 
+    <div class="container">
+        <div class="px-4 py-5 my-5 text-center">
+            <h1 class="display-5 fw-bold">Hello <span id="name"></span>
 
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead mb-4">You have taken a total of <span id="c_goal"></span> breaks today</p>
+                    <p class="lead mb-4">Your personal goal for the day was: <span id="p_goal"></span></p>
+                    <p class="lead mb-4">You are <span id="goal"></span>% the way there</p>
+                </div>
+        </div>
+    </div>
 
 
 
@@ -65,9 +72,13 @@
     <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
-    <!-- <script src="./scripts/script.js"></script> -->
+
+    <script src="./scripts/firebaseAPI_TEAM10.js"></script>
+    <script src="./scripts/daily.js"></script>
     <script src="./scripts/load_skeleton.js"></script>
-    <script src="./scripts/main.js"></script>
+    <script src="./scripts/authentication.js"></script>
+
+
 
 </body>
 
