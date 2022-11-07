@@ -11,13 +11,16 @@ var uiConfig = {
                 db.collection("users").doc(user.uid).set({         //write to firestore. We are using the UID for the ID in users collection
                     name: user.displayName,                    //"users" collection
                     email: user.email,                         //with authenticated user's ID (user.uid)
+                    country: "Canada",                      //optional default profile info      
+                    school: "BCIT",
                     reminders: {
                         start_time: '0',
                         interval: '0',
                         end_time: '0'
                     },
                     personal_goal: 0,
-                    break_counter: 0                      //optional default profile info
+                    break_counter: 0,
+                    goal: 0                       //optional default profile info
                 }).then(function () {
                     console.log("New user added to firestore");
                     window.location.assign("main.html");       //re-direct to main.html after signup
