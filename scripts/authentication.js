@@ -18,8 +18,8 @@ var uiConfig = {
                         interval: '0',
                         end_time: '0'
                     },
-                    personal_goal: '0',
-                    break_counter: '0',
+                    personal_goal: 0,
+                    break_counter: 0,
                     goal: 0                       //optional default profile info
                 }).then(function () {
                     console.log("New user added to firestore");
