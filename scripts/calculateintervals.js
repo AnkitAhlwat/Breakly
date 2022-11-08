@@ -32,9 +32,9 @@ time.get(reminders['start_time']).then(function (doc) {
 
         next_break = Math.abs(break_intervals[i] - current_time);
         console.log(next_break = Math.floor((next_break / (1000 * 60)) % 60));//showing the next break in x minutes
-        document.getElementById("break_time").innerHTML = next_break // should put next break time into the 
-        
-
+        document.getElementById("break_time").innerHTML = next_break // put it in the next break time into the user_homepage
+        break
+       
       }
 
 
