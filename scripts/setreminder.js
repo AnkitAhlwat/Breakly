@@ -10,11 +10,6 @@ function write_data(event) {
             z = $('#end_time').val();
             p = $('#personal_goal').val();
             p = parseInt(p);
-            console.log(x)
-            console.log(y)
-            console.log(z)
-            console.log(user.uid)
-            console.log(p)
 
             db.collection("users").doc(user.uid).update({
                 reminders: {
