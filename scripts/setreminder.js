@@ -7,6 +7,7 @@ function write_data(event) {
         if (user) {
             x = $('#start_time').val();
             y = $('#interval').val();
+            parseInt(y);
             z = $('#end_time').val();
             p = $('#personal_goal').val();
             p = parseInt(p);

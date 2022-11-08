@@ -8,9 +8,9 @@ time.get(reminders['start_time']).then(function (doc) {
 
   var break_intervals = [];
   var next_break = ""
-  var start_time = "20:30"
+  var start_time = "8:30 PM"
   var end_time = "23:30"
-  var interval = "30"
+  var interval = 30
   var startDate = new Date("1/1/2015 " + start_time);
   var endDate = new Date("1/1/2015 " + end_time);
   var offset = interval * 1000 * 60;
