@@ -17,22 +17,22 @@ time.get(reminders['start_time']).then(function (doc) {
   var current_time = new Date();
   var current_time = current_time.getHours() + ":" + current_time.getMinutes();
   current_time = new Date("1/1/2015 " + current_time);
-  console.log(current_time)
+  console.log(current_time) // test current actual with manufactured date
 
   do {
       startDate = new Date(startDate.getTime() + offset);
       
           break_intervals.push(startDate);
   } while (startDate < endDate);
-  console.log(break_intervals);
-  console.log(break_intervals[4])
+  // console.log(break_intervals); checking arrray 
+  // console.log(break_intervals[4]) test values
 
   for(i = 0; i < break_intervals.length; i++) {
       if (break_intervals[i] > current_time) {
 
         next_break = Math.abs(break_intervals[i] - current_time);
-        console.log(next_break = Math.floor((next_break / (1000 * 60)) % 60));
-        document.getElementById("break_time").innerHTML
+        console.log(next_break = Math.floor((next_break / (1000 * 60)) % 60));//showing the next break in x minutes
+        document.getElementById("break_time").innerHTML = next_break // should put next break time into the 
         
 
       }
@@ -42,7 +42,6 @@ time.get(reminders['start_time']).then(function (doc) {
   // this should create an array of time intervals, then will compare the compare to the next closest interval and then calculate the remaining until the next reminder
 })
 
-  
 //     you essentially need to pull their start time
 // and then everytime they log a break
 // add their increment value to their start time
