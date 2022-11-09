@@ -12,15 +12,16 @@ function calculateIntervals() {
 
           var break_intervals = [];
           var next_break = ""
-          var start_time = userDoc.data().start_time; // get start time from firebase
-          var end_time = userDoc.data().end_time;
-          var interval = userDoc.data().interval;
-          var startDate = new Date("1/1/2015 " + start_time);
-          var endDate = new Date("1/1/2015 " + end_time);
+          var reminders = userDoc.data().reminders;
+          var start_time = reminders.start_time;
+          var end_time = reminders.end_time;
+          var interval = reminders.interval;
+          var startDate = new Date("1/1/2022 " + start_time);
+          var endDate = new Date("1/1/2022 " + end_time);
           var offset = interval * 1000 * 60;
           var current_time = new Date();
           var current_time = current_time.getHours() + ":" + current_time.getMinutes();
-          current_time = new Date("1/1/2015 " + current_time);
+          current_time = new Date("1/1/2022 " + current_time);
           console.log(current_time) // test current actual with manufactured date
 
           do {
@@ -35,13 +36,14 @@ function calculateIntervals() {
             if (break_intervals[i] > current_time) {
 
               next_break = Math.abs(break_intervals[i] - current_time);
-              console.log(next_break = Math.floor((next_break / (1000 * 60)) % 60));//showing the next break in x minutes
-              document.getElementById("break_time").value = next_break // put it in the next break time into the user_homepage
+              next_break = Math.floor((next_break / (1000 * 60)) % 60);//showing the next break in x minutes
+              document.getElementById("break_time").innerHTML = next_break // put it in the next break time into the user_homepage
               break
                 
             }
 
           }
+          document.getElementById("my_personal_goal").innerHTML = userDoc.data().personal_goal
         })
     }
   });
