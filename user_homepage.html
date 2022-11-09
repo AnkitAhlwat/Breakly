@@ -55,15 +55,37 @@
 
     <div class="container">
         <div class="px-4 py-5 my-5 text-center">
-            <h1 class="display-5 fw-bold">Hello <span id="name-goes-here"></span>! Your next break is in <p
-                    id="break_time"></p> min</h1>
+            <h1 class="display-5 fw-bold">Hello <span id="name-goes-here"></span>! Your next break is in <span
+                    id="break_time"></span> min</h1>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <button id="break_counter" type="button" class="btn btn-dark btn-lg px-4 gap-3"> I took my
-                    break!</button>
+                <button id="break_counter" type="button" class="btn btn-dark btn-lg px-4 gap-3" data-bs-toggle="modal"
+                    data-bs-target="#exampleModal"> I took my break!</button>
             </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">You've logged a break!</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Great job keep it up! :)
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="col-lg-6 mx-auto">
                 <p class="lead mb-4">Animated image to show progress?</p>
-                <p class="lead mb-4">Your personal goal for the day was: <p id="my_personal_goal"></p> </p>
+                <p class="lead mb-4">Your personal goal for the day was:
+                <p id="my_personal_goal"></p>
+                </p>
             </div>
         </div>
     </div>
