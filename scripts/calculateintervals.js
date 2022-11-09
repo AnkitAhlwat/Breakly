@@ -22,15 +22,13 @@ function calculateIntervals() {
           var current_time = new Date();
           var current_time = current_time.getHours() + ":" + current_time.getMinutes();
           current_time = new Date("1/1/2022 " + current_time);
-          console.log(current_time) // test current actual with manufactured date
 
           do {
             startDate = new Date(startDate.getTime() + offset);
                 
             break_intervals.push(startDate);
           } while (startDate < endDate);
-          console.log(break_intervals); //checking arrray 
-          // console.log(break_intervals[4]) test values
+        
 
           for (i = 0; i < break_intervals.length; i++) {
             if (break_intervals[i] > current_time) {
