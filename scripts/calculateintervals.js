@@ -2,7 +2,7 @@
 
 ///right after pressing the submit button on set reminder page
 function calculateIntervals() {
-  
+
   firebase.auth().onAuthStateChanged(user => {
 
     if (user) {
@@ -26,7 +26,7 @@ function calculateIntervals() {
 
           do {
             startDate = new Date(startDate.getTime() + offset);
-                
+
             break_intervals.push(startDate);
           } while (startDate < endDate);
           for (i = 0; i < break_intervals.length; i++) {
@@ -36,11 +36,11 @@ function calculateIntervals() {
               next_break = Math.floor((next_break / (1000 * 60)) % 60);//showing the next break in x minutes
               document.getElementById("break_time").innerHTML = next_break // put it in the next break time into the user_homepage
               break
-                  
+                
             }
 
           }
-            document.getElementById("my_personal_goal").innerHTML = userDoc.data().personal_goal
+          document.getElementById("my_personal_goal").innerHTML = userDoc.data().personal_goal
         })
     }
   });
@@ -55,6 +55,6 @@ calculateIntervals();
 // store it as their new start time
 // until start time == end time
 
-    
-    
+
+
 
