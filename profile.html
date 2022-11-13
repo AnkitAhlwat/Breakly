@@ -91,33 +91,11 @@
     <nav id="navbarplaceholder"></nav>
 
 
-    <script>
-        function getUserData(){
-            
-            firebase.auth().onAuthStateChanged(user => {
-
-                if (user) {
-                    currentUser = db.collection("users").doc(user.uid)
-                    currentUser.get()
-                    .then(userDoc => {
-
-                        document.getElementById("name").innerHTML = userDoc.data().name
-                        console.log(userDoc.data().name)
-                        document.getElementById("school").innerHTML = userDoc.data().school
-                        document.getElementById("email").innerHTML = userDoc.data().email
-
-                    })
-                }
-            });
-        }
-        getUserData();
-    </script>
-
     <div class="card">
 
         <img src="./images/img.jpg" alt="John" style="width:100%">
         <h1><span id="name"></span></h1>
-        <p><span id="title"></span></p>
+        <p>Your total number of breaks is: <span id="break_counter"></span></p>
         <p><span id="school"></span></p>
         <p><span id="email"></span></p>
         <a href="#"><i class="fa fa-dribbble"></i></a>
@@ -138,9 +116,11 @@
     <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
-    <!-- <script src="./scripts/script.js"></script> -->
+    
     <script src="./scripts/load_skeleton.js"></script>
     <script src="./scripts/firebaseAPI_TEAM10.js"></script>
+    <script src="./scripts/getUserData.js"></script>
+
 
 </body>
 
