@@ -22,14 +22,13 @@ function calculateIntervals() {
           var current_time = new Date();
           var current_time = current_time.getHours() + ":" + current_time.getMinutes();
           current_time = new Date("1/1/2022 " + current_time);
+          console.log(current_time)
 
           do {
             startDate = new Date(startDate.getTime() + offset);
                 
             break_intervals.push(startDate);
           } while (startDate < endDate);
-        
-
           for (i = 0; i < break_intervals.length; i++) {
             if (break_intervals[i] > current_time) {
 
@@ -37,11 +36,11 @@ function calculateIntervals() {
               next_break = Math.floor((next_break / (1000 * 60)) % 60);//showing the next break in x minutes
               document.getElementById("break_time").innerHTML = next_break // put it in the next break time into the user_homepage
               break
-                
+                  
             }
 
           }
-          document.getElementById("my_personal_goal").innerHTML = userDoc.data().personal_goal
+            document.getElementById("my_personal_goal").innerHTML = userDoc.data().personal_goal
         })
     }
   });
