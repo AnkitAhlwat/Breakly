@@ -22,9 +22,9 @@ function goalTracker() {
                             const goal = (break_counter / personal_goal) * 100
                             $("#name").html(user_name)
                             // Learn how to get data from a time span
-                            // $("#c_weekly_goal").html(break_counter)
-                            // $("#p_weekly_goal").html(personal_goal)
-                            // $("#weekly_goal").html(goal)
+                            // $("#c_weekly").html(break_counter)
+                            // $("#p_weekly").html(personal_goal)
+                            // $("#goal_progress").html(goal)
                             console.log(element)
                             console.log(goal)
 
