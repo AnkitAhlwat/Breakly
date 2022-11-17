@@ -56,40 +56,63 @@
 
 
     <!-- Wrapper container -->
-    <div class="container py-4">
-        <h2 style="text-align:center">Contact us</h1>
+    <div id="contact_us_form">
+        <div class="container py-4">
+            <h2 style="text-align:center">Contact us</h1>
 
-            <!-- Bootstrap 5 starter form -->
-            <form id="contactForm">
+                <!-- Bootstrap 5 starter form -->
+                <form id="contactForm">
 
-                <!-- Name input -->
-                <div class="mb-3">
-                    <label class="form-label" for="name">Name</label>
-                    <input class="form-control" id="name" type="text" placeholder="Name" />
-                </div>
+                    <!-- Name input -->
+                    <div class="mb-3">
+                        <label class="form-label" for="name">Name</label>
+                        <input id="user_name" class="form-control" id="name" type="text" placeholder="Name" />
+                    </div>
 
-                <!-- Email address input -->
-                <div class="mb-3">
-                    <label class="form-label" for="emailAddress">Email Address</label>
-                    <input class="form-control" id="emailAddress" type="email" placeholder="Email Address" />
-                </div>
+                    <!-- Email address input -->
+                    <div class="mb-3">
+                        <label class="form-label" for="emailAddress">Email Address</label>
+                        <input id="user_email" class="form-control" id="emailAddress" type="email"
+                            placeholder="Email Address" />
+                    </div>
 
-                <!-- Message input -->
-                <div class="mb-3">
-                    <label class="form-label" for="message">Message</label>
-                    <textarea class="form-control" id="message" type="text" placeholder="Message"
-                        style="height: 10rem;"></textarea>
-                </div>
+                    <!-- Message input -->
+                    <div class="mb-3">
+                        <label class="form-label" for="message">Message</label>
+                        <textarea class="form-control" id="user_message" type="text" placeholder="Message"
+                            style="height: 10rem;"></textarea>
+                    </div>
 
-                <!-- Form submit button -->
-                <div class="d-grid">
-                    <button class="btn btn-dark btn-lg" type="submit">Submit</button>
-                </div>
+                    <!-- Form submit button -->
+                    <div class="d-grid">
+                        <button class="btn btn-dark btn-lg" type="input" onclick="contact_us()" data-bs-toggle="modal"
+                            data-bs-target="#exampleModal">Submit</button>
+                    </div>
 
-                <a href="./faq.html"> View our FAQ page </a>
+                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">You've sent a message</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    We'll get back to you as soon as we can!
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            </form>
 
+                </form>
+
+        </div>
     </div>
 
 
@@ -105,6 +128,12 @@
     <!-- Link to scripts of your own -->
     <!-- <script src="./scripts/script.js"></script> -->
     <script src="./scripts/load_skeleton.js"></script>
+    <script src="./scripts/firebaseAPI_TEAM10.js"></script>
+    <script src="./scripts/load_skeleton.js"></script>
+    <script src="./scripts/main.js"></script>
+    <script src="./scripts/setreminder.js"></script>
+    <script src="scripts/authentication.js"></script>
+    <script src="./scripts/contact_us.js"></script>
 
 </body>
 
