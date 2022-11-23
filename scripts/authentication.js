@@ -13,7 +13,7 @@ var uiConfig = {
                     email: user.email,                         //with authenticated user's ID (user.uid)
                     country: "Canada",                      //optional default profile info      
                     school: "BCIT",
-                    aboutme:"",
+                    aboutme: " ",
                     reminders: {
                         start_time: '0',
                         interval: '0',
