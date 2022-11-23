@@ -6,7 +6,6 @@ function write_data() {
         // Check if a user is signed in:
         if (user) {
             window.location.href = "weekly.html";
-            console.log("yo")
         }
         else {
             window.location.href = "no_user.html"
