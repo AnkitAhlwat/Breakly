@@ -8,7 +8,6 @@ function log_break_counter() {
             userRef.update({
                 break_counter: firebase.firestore.FieldValue.increment(1)
             })
-
             function setup() {
                 $('#break_counter').click(log_break_counter);
             }
@@ -27,11 +26,22 @@ function picture_setting() {
         // Check if a user is signed in:
         if (user) {
             db.collection("users").doc(user.uid).onSnapshot(function (doc) {
+                var today = new Date().getDay();
                 var break_counter = doc.data().break_counter;
                 var personal_goal = doc.data().personal_goal;
                 var progress = (break_counter / personal_goal)
                 $("#breaks").html(break_counter);
                 $("#personal_goal").html(personal_goal);
+                currentUser.set({
+                    days_breaks_taken: { [today + x]: break_counter }
+                }, {
+                    merge: true
+                })
+                currentUser.set({
+                    days_personal_goal: { [today + x]: personal_goal }
+                }, {
+                    merge: true
+                })
 
                 if (progress < 0.25) {
                     document.getElementById("picture").src = "./images/plant_1.jpg";
