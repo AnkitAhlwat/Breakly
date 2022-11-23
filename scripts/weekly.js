@@ -1,48 +1,31 @@
 var user = firebase.auth().currentUser;
 
 function goalTracker() {
-    console.log("ready")
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
-
-
         if (user) {
-            currentUser = db.collection("users").doc(user.uid)
-            db.collection("users").get()
+            db.collection("users").doc(user.uid).onSnapshot(function (doc) {
+                var today = new Date().getDay();
+                var array_of_personal_goals = doc.data().days_personal_goal;
+                var array_of_breaks_taken = doc.data().days_breaks_taken;
+                var goal_total = 0
+                for (var key in array_of_personal_goals) {
+                    goal_total += array_of_personal_goals[key];
 
-                .then(snap => {
-                    snap.forEach(element => {
+                };
+                var break_total = 0
+                for (var key in array_of_breaks_taken) {
+                    break_total += array_of_breaks_taken[key];
 
-                        if (element.id == user.uid) {
-                            var today = new Date().getDay();
-                            var break_counter = Number(element.data().break_counter)
-                            var personal_goal = Number(element.data().personal_goal)
-                            currentUser = db.collection("users").doc(user.uid)
-                            currentUser.set({
-                                days_breaks_taken: { [today]: break_counter }
-                            }, {
-                                merge: true
-                            })
-                            currentUser.set({
-                                days_personal_goal: { [today]: personal_goal }
-                            }, {
-                                merge: true
-                            })
+                };
+                var progress = (break_total / goal_total) * 100
+                $("#breaks").html(break_total);
+                $("#personal_goal").html(goal_total);
+                $("#progress").html(progress.toFixed());
 
-
-
-                        }
-                    });
-
-                }
-
-                )
-
-
+            })
         }
-
-    }
-    );
+    })
 
 }
 goalTracker();
