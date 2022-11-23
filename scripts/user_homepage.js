@@ -4,6 +4,7 @@ function log_break_counter() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
+            //if user is signed in, update and increment the break counter by 1 in the database
             userRef = db.collection("users").doc(user.uid);
             userRef.update({
                 break_counter: firebase.firestore.FieldValue.increment(1)
@@ -19,6 +20,7 @@ function picture_setting() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
+            //reads the data from fire-store and stores it in a variable to update user homepage with this data
             db.collection("users").doc(user.uid).onSnapshot(function (doc) {
                 var today = new Date().getDay();
                 var break_counter = doc.data().break_counter;
@@ -37,6 +39,7 @@ function picture_setting() {
                     merge: true
                 })
 
+                //calculates the user progress towards their goal, and sets different plant image depending on progress
                 if (progress < 0.25) {
                     document.getElementById("picture").src = "./images/plant_1.jpg";
                 }
