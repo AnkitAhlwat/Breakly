@@ -15,12 +15,6 @@ function log_break_counter() {
     })
 }
 
-function setup() {
-    console.log('meeeeh');
-    $('#break_counter').click(log_break_counter);
-}
-$(document).ready(setup);
-
 function picture_setting() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
@@ -33,12 +27,12 @@ function picture_setting() {
                 $("#breaks").html(break_counter);
                 $("#personal_goal").html(personal_goal);
                 currentUser.set({
-                    days_breaks_taken: { [today + x]: break_counter }
+                    days_breaks_taken: { [today]: break_counter }
                 }, {
                     merge: true
                 })
                 currentUser.set({
-                    days_personal_goal: { [today + x]: personal_goal }
+                    days_personal_goal: { [today]: personal_goal }
                 }, {
                     merge: true
                 })
@@ -60,4 +54,10 @@ function picture_setting() {
     })
 }
 
+function setup() {
+    console.log('meeeeh');
+    $('#break_counter').click(log_break_counter);
+    $('#break_counter').click(picture_setting);
+}
+$(document).ready(setup);
 picture_setting()
