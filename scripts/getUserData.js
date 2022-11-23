@@ -57,6 +57,7 @@ function saveUserInfo() {
                         userSchool = document.getElementById('schoolInput').value;
                         userCountry = document.getElementById('countryInput').value;
                         userEmail = document.getElementById('emailInput').value;
+                        useraboutme = document.getElementById('aboutmeInput').value;
 
                         //Asynch call to save the form fields into Firestore.
                         db.collection("users").doc(user.uid).update({
@@ -64,6 +65,7 @@ function saveUserInfo() {
                                 school: userSchool,
                                 country: userCountry,
                                 email: userEmail,
+                                aboutme: useraboutme,
                                 profilePic: url // Save the URL into users collection
                             })
                             .then(function () {
@@ -84,7 +86,7 @@ function editUserInfo() {
 function populateInfo() {
     firebase.auth().onAuthStateChanged(user => {
             if (user) {
-                // go and get the curret user info from firestore
+                // go and get the current user info from firestore
                 currentUser = db.collection("users").doc(user.uid);
 
                 currentUser.get()
@@ -112,8 +114,7 @@ function populateInfo() {
         
                         if (picUrl != null){
                             console.log(picUrl);
-								            // use this line if "mypicdiv" is a "div"
-                            //$("#mypicdiv").append("<img src='" + picUrl + "'>")
+								        
                             $("#mypic-goes-here").attr("src", picUrl);
                         }
                         else
