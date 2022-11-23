@@ -58,6 +58,7 @@ function saveUserInfo() {
                         console.log("Got the download URL.");
 												//get values from the from
                         userName = document.getElementById('nameInput').value;
+                        console.log()
                         userSchool = document.getElementById('schoolInput').value;
                         userCountry = document.getElementById('countryInput').value;
                         userEmail = document.getElementById('emailInput').value;
