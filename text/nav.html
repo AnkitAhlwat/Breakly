@@ -1,5 +1,6 @@
+<!--Navbar html to be loaded into each page-->
 <nav class="navbar navbar-dark bg-dark py-3 justify-content-between" style="padding-left:5%; padding-right:5%">
-    <a style="background:none; border: none;" class="btn btn-primary" href="main.html" role="button"><i
+    <a style="background:none; border: none;" class="btn btn-primary" href="login_homepage.html" role="button"><i
             class="material-symbols-outlined md-36">potted_plant</i></a>
 
     <span class="navbar-text text-light" style="font-size:x-large">Breakly</span>
@@ -10,9 +11,9 @@
             <i class="material-symbols-outlined md-36">account_circle</i>
         </button>
         <div class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="/profile.html">Profile</a>
+            <a id="profile" class="dropdown-item redirect_button" onclick="check_login(this.id)" href="#">Profile</a>
             <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
         </div>
     </div>
-    <script src="/1800_202230_DTC10/scripts/logout.js"></script>
+    <script src="/scripts/logout.js"></script>
 </nav>

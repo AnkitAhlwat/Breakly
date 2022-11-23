@@ -7,13 +7,8 @@ function insertName() {
             console.log(user.displayName);
             user_Name = user.displayName;
 
-            //method #1:  insert with html only
-            //document.getElementById("name-goes-here").innerText = user_Name;    //using javascript
-            //method #2:  insert using jquery
-            $("#name-goes-here").text(user_Name); //using jquery
-
-        } else {
-            // No user is signed in.
+            //insert users name into the welcome message
+            $("#name-goes-here").text(user_Name);
         }
     });
 }
