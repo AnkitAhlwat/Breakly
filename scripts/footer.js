@@ -9,7 +9,7 @@ function write_data() {
             console.log("yo")
         }
         else {
-            window.location.href = "login_homepage.html"
+            window.location.href = "no_user.html"
         }
     })
 }
