@@ -4,12 +4,10 @@
 function calculateIntervals() {
 
   firebase.auth().onAuthStateChanged(user => {
-
     if (user) {
       currentUser = db.collection("users").doc(user.uid)
       currentUser.get()
         .then(userDoc => {
-
           var break_intervals = [];
           var next_break = ""
           var reminders = userDoc.data().reminders;
@@ -36,11 +34,11 @@ function calculateIntervals() {
               next_break = Math.floor((next_break / (1000 * 60)) % 60);//showing the next break in x minutes
               document.getElementById("break_time").innerHTML = next_break // put it in the next break time into the user_homepage
               break
-                
+
             }
 
           }
-          document.getElementById("my_personal_goal").innerHTML = userDoc.data().personal_goal
+
         })
     }
   });
