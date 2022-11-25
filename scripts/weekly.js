@@ -20,10 +20,21 @@ function goalTracker() {
                 var progress = (break_total / goal_total) * 100;
                 for (i = 1; i <= Object.keys(array_of_breaks_taken).length; i++) {
                     console.log(i)
-                    width = (array_of_breaks_taken[i] / array_of_personal_goals[i]) * 100
+                    width = (array_of_breaks_taken[today] / array_of_personal_goals[today]) * 100
+                    days = {
+                        1: "Monday",
+                        2: "Tuesday",
+                        3: "Wednesday",
+                        4: "Thursday",
+                        5: "Friday",
+                        6: "Saturday",
+                        7: "Sunday"
+                    }
+                    day = days[today]
+                    console.log(day)
                     $(".container").append(
                         `
-
+                        <h4>${day}</h4>
                         <div class="progress">
                         <div class="progress-bar" role="progressbar" aria-label="Example with label" style="width: ${width}% ;" aria-valuenow="${width}" aria-valuemin="0" aria-valuemax="100]">${width}%</div>
                         </div>
