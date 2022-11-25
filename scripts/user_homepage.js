@@ -58,7 +58,6 @@ function picture_setting() {
 }
 
 function setup() {
-    console.log('meeeeh');
     $('#break_counter').click(log_break_counter);
     $('#break_counter').click(picture_setting);
 }

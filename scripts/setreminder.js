@@ -25,7 +25,7 @@ function write_data(event) {
                 //after updating, redirect to the users homepage
                 .then(
                     function () {
-                        window.location.href = 'user_homepage.html';
+                        window.location.href = 'user_page.html';
                     },
                     //if unable to update, will log error
                     function (error) {
