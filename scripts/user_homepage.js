@@ -1,10 +1,5 @@
 var user = firebase.auth().currentUser;
 
-//if user is signed in, redirect them to set reminder page
-function change_break() {
-    window.location.href = "./setreminder.html";
-}
-
 function log_break_counter() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
@@ -14,9 +9,6 @@ function log_break_counter() {
             userRef.update({
                 break_counter: firebase.firestore.FieldValue.increment(1)
             })
-            function setup() {
-                $('#break_counter').click(log_break_counter);
-            }
         }
     })
 }
