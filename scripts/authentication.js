@@ -1,5 +1,3 @@
-
-
 // Initialize the FirebaseUI Widget using Firebase.
 var ui = new firebaseui.auth.AuthUI(firebase.auth());
 
@@ -21,7 +19,6 @@ var uiConfig = {
                     },
                     personal_goal: 0,
                     break_counter: 0,
-                    goal: 0                       //optional default profile info
                 }).then(function () {
                     console.log("New user added to firestore");
                     window.location.assign("main.html");       //re-direct to main.html after signup
