@@ -3,6 +3,14 @@ var user = firebase.auth().currentUser;
 //if user is signed in, redirect them to set reminder page
 function change_break() {
     window.location.href = "./setreminder.html";
+
+    // Reset break_counter
+    firebase.auth().onAuthStateChanged(user => {
+        db.collection("users").doc(user.uid).update({
+            break_counter: 0
+        })
+
+    })
 }
 
 function log_break_counter() {
