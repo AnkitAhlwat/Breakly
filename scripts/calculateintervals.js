@@ -9,7 +9,6 @@ function calculateIntervals() {
       currentUser.get()
         .then(userDoc => {
           var break_intervals = [];
-          var next_break = ""
           var reminders = userDoc.data().reminders;
           var start_time = reminders.start_time;
           var end_time = reminders.end_time;
@@ -30,8 +29,10 @@ function calculateIntervals() {
           for (i = 0; i < break_intervals.length; i++) {
             if (break_intervals[i] > current_time) {
 
-              next_break = Math.abs(break_intervals[i] - current_time);
+              var next_break = Math.abs(break_intervals[i] - current_time);
+              console.log(next_break)
               next_break = Math.floor((next_break / (1000 * 60)) % 60);//showing the next break in x minutes
+              console.log(next_break)
               document.getElementById("break_time").innerHTML = next_break // put it in the next break time into the user_homepage
               break
 
