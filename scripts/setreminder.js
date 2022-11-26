@@ -17,7 +17,7 @@ function write_data(event) {
             db.collection("users").doc(user.uid).update({
                 reminders: {
                     start_time: user_start_time,
-                    interval: user_end_time,
+                    interval: user_interval,
                     end_time: user_end_time,
                 },
                 personal_goal: user_goal,
