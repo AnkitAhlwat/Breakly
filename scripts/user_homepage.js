@@ -57,7 +57,6 @@ function picture_setting() {
 function setup() {
     $('#break_counter').click(log_break_counter);
     $('#break_counter').click(picture_setting);
-    $("#change_break").click(change_break)
 }
 $(document).ready(setup);
 picture_setting()
