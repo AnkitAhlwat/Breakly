@@ -25,8 +25,7 @@ function goalTracker() {
                 };
 
 
-                // 
-                var progress = (break_total / goal_total) * 100;
+                // Setting up array for weekly progress 
                 days = {
                     1: "Monday",
                     2: "Tuesday",
@@ -37,9 +36,12 @@ function goalTracker() {
                     7: "Sunday",
 
                 }
+
+                // Iterating through each day in the breaks_taken array from firebase
                 Object.keys(days).forEach(day => {
                     width = (array_of_breaks_taken[day] / array_of_personal_goals[day]) * 100
-                    console.log(width)
+
+                    // To hide NAN values
                     if (width == width) {
                         $("#weekly_progress").append(
                             `
@@ -52,6 +54,8 @@ function goalTracker() {
                         )
                     }
                 })
+
+                // Displaying on weekly.html page
                 $("#breaks").html(break_total);
                 $("#personal_goal").html(goal_total);
                 $("#name").html(name);
