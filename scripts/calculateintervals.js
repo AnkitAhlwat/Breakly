@@ -32,6 +32,7 @@ function calculateIntervals() {
 
             break_intervals.push(startDate);
           } while (startDate < endDate);
+          // loop trough the array until we meet a value that is larger than current time
           for (i = 0; i < break_intervals.length; i++) {
             if (break_intervals[i] > current_time) {
 
