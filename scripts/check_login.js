@@ -17,7 +17,7 @@ function check_login(text) {
                 window.location.href = 'profile.html';
             }
         }
-        //if user is not signed in, will tell them to sign in at the homepage
+        //if user is not signed in, have an alert telling them to sign in, and will direct them homepage to sign in
         else {
             if (text == "home") {
                 window.location.href = 'login_homepage.html';
