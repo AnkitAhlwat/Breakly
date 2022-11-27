@@ -43,10 +43,7 @@
 </head>
 
 <body>
-
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
+    <!--navbar-->
     <nav id="navbarplaceholder"></nav>
 
 
@@ -55,17 +52,22 @@
     <!--Provides user with their next break countdown-->
     <div class="container">
         <div class="px-4 py-5 my-5 text-center">
+            <!--span is to inject users next break time into the sentence-->
             <h1 class="display-5 fw-bold">Hello <span id="name-goes-here"></span>! Your next break is in <span
                     id="break_time"></span> min</h1>
             <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+
+                <!--button will increment users break counter as well as call the modal content-->
                 <button id="break_counter" type="button" class="btn btn-dark btn-lg px-4 gap-3" data-bs-toggle="modal"
                     data-bs-target="#exampleModal"> I took my break!</button>
+
+                <!--redirects back to set reminder form if user wants to change their break intervals-->
                 <a href="setreminder.html"><button id="change_break" type="button"
                         class="btn btn-secondary btn-lg px-4 gap-3">Change my
                         break</button></a>
             </div>
 
-            <!-- Modal -->
+            <!-- Modal that tells users they've successfully logged a break -->
             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                 aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered">
@@ -97,21 +99,13 @@
             </p>
         </div>
     </div>
-    </div>
-    </div>
 
-
+    <!--footer-->
     <footer id="footerplaceholder"></footer>
 
-
-
-
-    <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
-    <!---------------------------------------------->
-
-    <!-- Link to scripts of your own -->
-    <!-- <script src="./scripts/script.js"></script> -->
+    <!--------------------------------------->
+    <!-- Links to our JavaScript functions -->
+    <!--------------------------------------->
     <script src="./scripts/firebaseAPI_TEAM10.js"></script>
     <script src="./scripts/load_skeleton.js"></script>
     <script src="./scripts/main.js"></script>

@@ -13,7 +13,7 @@ function getUserData() {
                     $("#mypic-goes-here").attr("src", picUrl);
 
 
-
+                    // populate the users data into the the profile card into profile.html
                     document.getElementById("name").innerHTML = userDoc.data().name
                     console.log("The user's name is:", userDoc.data().name)
                     document.getElementById("school").innerHTML = userDoc.data().school
