@@ -24,7 +24,7 @@ function calculateIntervals() {
           // we only want the hours and the minutes which then add to the same date as the startDate and the endDate
           var current_time = current_time.getHours() + ":" + current_time.getMinutes();
           current_time = new Date("1/1/2022 " + current_time);
-          console.log(current_time)
+          console.log("The current time is :", current_time)
 
           do {
             // populate an array with the startDate incremented by the offset
@@ -36,9 +36,8 @@ function calculateIntervals() {
             if (break_intervals[i] > current_time) {
 
               var next_break = Math.abs(break_intervals[i] - current_time);
-              console.log(next_break)
               next_break = Math.floor((next_break / (1000 * 60)) % 60);//showing the next break in x minutes
-              console.log(next_break)
+              console.log("The next break is in", next_break, " minutes!")
               document.getElementById("break_time").innerHTML = next_break // put it in the next break time into the user_homepage
               break
 

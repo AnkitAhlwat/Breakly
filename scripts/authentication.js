@@ -51,13 +51,13 @@ var uiConfig = {
 };
 
 function login_option() {
-    console.log("test2");
+    console.log("The login button has been clicked!");
+    // Hide the login button now and show authentication
     $('#login_block').css('display', 'none');
     ui.start('#firebaseui-auth-container', uiConfig);
 
 }
 function setup() {
-    console.log("test");
     $("#login_button").click(login_option);
 }
 $(document).ready(setup)

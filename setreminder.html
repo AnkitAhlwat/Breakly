@@ -44,10 +44,7 @@
 </head>
 
 <body>
-
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
+    <!--Navbar-->
     <nav id="navbarplaceholder"></nav>
 
 
@@ -55,6 +52,7 @@
     <form>
         <div id="form-box">
             <div class="form-group">
+                <!--Interval values-->
                 <label for="exampleFormControlSelect1">I want a break every...</label>
                 <select class="form-control" id="interval">
                     <option>15 min</option>
@@ -65,6 +63,7 @@
             </div>
             <div class="row">
                 <div class="form-group col-lg-6">
+                    <!--Break start time-->
                     <label for="exampleFormControlSelect1">Starting at...</label>
                     <select class="form-control" id="start_time">
                         <option>8:00 AM</option>
@@ -74,6 +73,7 @@
                     </select>
                 </div>
                 <div class="form-group col-lg-6">
+                    <!--Break end time-->
                     <label for="exampleFormControlSelect1">Ending at...</label>
                     <select class="form-control" id="end_time">
                         <option>5:00 PM</option>
@@ -87,6 +87,7 @@
             <div class="form-group">
                 <label style="float:left" for="exampleFormControlTextarea1">My personal goal for the day is to
                     take this many breaks:</label>
+                <!--personal goal setting-->
                 <select class="form-control" id="personal_goal">
                     <option>1</option>
                     <option>2</option>
@@ -103,22 +104,23 @@
         </div>
         <div class="d-grid">
             <div style="text-align:center">
+                <!--submit will call function to write to firestore-->
                 <button id="log_button" style="width:80%; margin:0 auto" class=" btn btn-dark btn-lg"
                     type="submit">Submit</button>
             </div>
         </div>
     </form>
 
+    <!-- Footer -->
     <footer id="footerplaceholder"></footer>
 
 
 
 
 
-    <!-- Link to scripts of your own -->
+    <!-- Link to scripts of our own -->
     <script src="./scripts/firebaseAPI_TEAM10.js"></script>
     <script src="./scripts/load_skeleton.js"></script>
-    <script src="./scripts/main.js"></script>
     <script src="./scripts/setreminder.js"></script>
     <script src="scripts/authentication.js"></script>
 

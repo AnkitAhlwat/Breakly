@@ -4,6 +4,7 @@ function log_break_counter() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
+            console.log("The user clicked on the I took my break button!")
             //if user is signed in, update and increment the break counter by 1 in the database
             userRef = db.collection("users").doc(user.uid);
             userRef.update({
@@ -17,7 +18,8 @@ function picture_setting() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
-            //reads the data from fire-store and stores it in a variable to update user homepage with this data
+
+            //Read the data from fire-store and stores it in a variable to update user homepage with this data
             db.collection("users").doc(user.uid).onSnapshot(function (doc) {
                 var today = new Date().getDay();
                 var break_counter = doc.data().break_counter;
@@ -25,6 +27,9 @@ function picture_setting() {
                 var progress = (break_counter / personal_goal)
                 $("#breaks").html(break_counter);
                 $("#personal_goal").html(personal_goal);
+
+                // Update the days_breaks_taken/days_personal_goal arrays in firebase based on the day
+                // If no data exists, it will set the data for the first time
                 currentUser.set({
                     days_breaks_taken: { [today]: break_counter }
                 }, {
@@ -36,7 +41,7 @@ function picture_setting() {
                     merge: true
                 })
 
-                //calculates the user progress towards their goal, and sets different plant image depending on progress
+                //Calculate the user progress towards their goal, and sets different plant image depending on progress
                 if (progress < 0.25) {
                     document.getElementById("picture").src = "./images/plant_1.jpg";
                 }
@@ -57,7 +62,6 @@ function picture_setting() {
 function setup() {
     $('#break_counter').click(log_break_counter);
     $('#break_counter').click(picture_setting);
-    $("#change_break").click(change_break)
 }
 $(document).ready(setup);
 picture_setting()

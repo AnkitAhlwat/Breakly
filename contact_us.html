@@ -45,21 +45,13 @@
 </head>
 
 <body>
-
-    <!------------------------------>
-    <!-- Your HTML Layout go here -->
-    <!------------------------------>
     <nav id="navbarplaceholder"></nav>
-
-
-
 
     <!--Contact us form for users to fill out-->
     <div id="contact_us_form">
         <div class="container py-4">
             <h2 style="text-align:center">Contact us</h1>
 
-                <!-- Bootstrap 5 starter form -->
                 <form id="contactForm">
 
                     <!-- Name input -->
@@ -89,6 +81,7 @@
                             data-bs-target="#exampleModal">Submit</button>
                     </div>
 
+                    <!--Modal which tells the user that they've sent the message-->
                     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
                         aria-hidden="true">
                         <div class="modal-dialog modal-dialog-centered">
@@ -122,17 +115,14 @@
 
 
     <!---------------------------------------------->
-    <!-- Your own JavaScript functions go here    -->
+    <!-- Links to relevant js files    -->
     <!---------------------------------------------->
-
-    <!-- Link to scripts of your own -->
-    <!-- <script src="./scripts/script.js"></script> -->
     <script src="./scripts/load_skeleton.js"></script>
     <script src="./scripts/firebaseAPI_TEAM10.js"></script>
     <script src="./scripts/load_skeleton.js"></script>
     <script src="./scripts/main.js"></script>
     <script src="./scripts/setreminder.js"></script>
-    <script src="scripts/authentication.js"></script>
+    <script src="./scripts/authentication.js"></script>
     <script src="./scripts/contact_us.js"></script>
 
 </body>
