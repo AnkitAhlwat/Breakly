@@ -30,9 +30,8 @@ function calculateIntervals() {
             if (break_intervals[i] > current_time) {
 
               var next_break = Math.abs(break_intervals[i] - current_time);
-              console.log(next_break)
               next_break = Math.floor((next_break / (1000 * 60)) % 60);//showing the next break in x minutes
-              console.log(next_break)
+              console.log("The next break is in", next_break, " minutes!")
               document.getElementById("break_time").innerHTML = next_break // put it in the next break time into the user_homepage
               break
 
