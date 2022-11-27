@@ -4,6 +4,7 @@ function log_break_counter() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
+            console.log("The user clicked on the I took my break button!")
             //if user is signed in, update and increment the break counter by 1 in the database
             userRef = db.collection("users").doc(user.uid);
             userRef.update({
