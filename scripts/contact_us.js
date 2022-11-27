@@ -1,5 +1,6 @@
 //reads the user inputted data from the contact us form and stores it in variables
 function contact_us() {
+    console.log('Submit button has been clicked!')
     var user_name = document.getElementById("user_name").value;
     var user_email = document.getElementById("user_email").value;
     var user_message = document.getElementById("user_message").value;
