@@ -19,7 +19,7 @@ function calculateIntervals() {
           var current_time = new Date();
           var current_time = current_time.getHours() + ":" + current_time.getMinutes();
           current_time = new Date("1/1/2022 " + current_time);
-          console.log(current_time)
+          console.log("The current time is :", current_time)
 
           do {
             startDate = new Date(startDate.getTime() + offset);
