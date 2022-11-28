@@ -49,16 +49,11 @@ function calculateIntervals() {
         })
     }
   });
-  // this should create an array of time intervals, then will compare the compare to the next closest interval and then calculate the remaining until the next reminder
+  // this should create an array of time intervals, then will compare the compare to the next closest interval and then calculate the remaining time until the next reminder
 }
 
 calculateIntervals();
 
-//     you essentially need to pull their start time
-// and then everytime they log a break
-// add their increment value to their start time
-// store it as their new start time
-// until start time == end time
 
 
 
