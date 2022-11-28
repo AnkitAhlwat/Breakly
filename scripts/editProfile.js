@@ -82,7 +82,7 @@ function populateInfo() {
                         console.log(userAboutMe)
                         let picUrl = userDoc.data().profilePic;
                         console.log(picUrl)
-
+                        // assign teh user info into the appropriate id's
                         if (userName != null){
                             document.getElementById("nameInput").value = userName;
                         }

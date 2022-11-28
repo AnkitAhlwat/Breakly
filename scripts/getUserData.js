@@ -3,6 +3,7 @@ function getUserData() {
     firebase.auth().onAuthStateChanged(user => {
 
         if (user) {
+            // get access to the current users data from the firestore
             currentUser = db.collection("users").doc(user.uid)
             currentUser.get()
                 .then(userDoc => {
@@ -28,4 +29,4 @@ function getUserData() {
         }
     });
 }
-getUserData();
+getUserData();// invoke the function
