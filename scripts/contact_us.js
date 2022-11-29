@@ -1,4 +1,4 @@
-//reads the user inputted data from the contact us form and stores it in variables
+//function reads the user inputted data from the contact us form and writes the data on to the firebase
 function contact_us() {
     console.log('Submit button has been clicked!')
     var user_name = document.getElementById("user_name").value;
@@ -11,6 +11,7 @@ function contact_us() {
         email: user_email,
         message: user_message
     })
+        //clears the form so the user can input new data
         .then(function () {
             document.getElementById("user_name").value = "";
             document.getElementById("user_email").value = "";

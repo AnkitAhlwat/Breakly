@@ -1,5 +1,6 @@
 var user = firebase.auth().currentUser;
 
+//function to log the break counter when the user clicks the button
 function log_break_counter() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
@@ -14,12 +15,13 @@ function log_break_counter() {
     })
 }
 
+//function to determine which photo to display based on the break counter and progress towards personal goal
 function picture_setting() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
         if (user) {
 
-            //Read the data from fire-store and stores it in a variable to update user homepage with this data
+            //Read the data from firestore and stores it in a variable to update user homepage with this data
             db.collection("users").doc(user.uid).onSnapshot(function (doc) {
                 var today = new Date().getDay();
                 var break_counter = doc.data().break_counter;
@@ -59,6 +61,7 @@ function picture_setting() {
     })
 }
 
+//when users click on the I took my break button, it will call the log_break_counter function and the picture setting simultaneously
 function setup() {
     $('#break_counter').click(log_break_counter);
     $('#break_counter').click(picture_setting);
