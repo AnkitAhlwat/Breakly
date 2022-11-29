@@ -1,3 +1,4 @@
+
 var ImageFile;      //global variable to store the File Object reference
 
 function chooseFileListener(){
@@ -120,3 +121,8 @@ function populateInfo() {
 
 }
 populateInfo();
+
+// the functionality of this function is incomplete in the following ways:
+// - users data cannot be populated into the appropriate forms
+// - the users saved profile picture cannot be used through the firebase URL in the profile.html 
+//   (pulled from firebase through getUserData.js) file
