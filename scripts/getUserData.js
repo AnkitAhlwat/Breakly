@@ -10,7 +10,7 @@ function getUserData() {
                     let picUrl = userDoc.data().profilePic;
 
                     console.log("The pic url is", picUrl);
-
+                    // cannot get the image from firebase storage
                     $("#mypic-goes-here").attr("src", picUrl);
 
 
