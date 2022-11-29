@@ -23,8 +23,8 @@
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <script src="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-storage.js"></script>
     <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.8.1/firebase-ui-auth.css" />
 
     <!-- Google Icons (Material Design)-->
@@ -57,35 +57,44 @@
                 <div class="form-group py-5">
                     <!-- Image Input -->
                     <div id="profile-container">
-                        <img id="mypic-goes-here" src="" />
+                        <img style="width: 20%;" id="mypic-goes-here" src="" />
                     </div>
                     <input id="mypic-input" type="file">
                 </div>
                 <!-- Name Input -->
                 <div class="form-group">
                     <label>Name</label>
-                    <input type="text" id="nameInput" class="form-control" placeholder="Enter your name">
-
+                    <input type="text" id="nameInput" class="form-control" >
+                    <label for="currentName">Current Name:</label>
+                    <span id="currentName"></span>
                 </div>
                 <!-- School Input -->
                 <div class="form-group">
                     <label>School</label>
-                    <input type="text" id="schoolInput" class="form-control" placeholder="Enter your school">
+                    <input type="text" id="schoolInput" class="form-control" >
+                    <label for="currentSchool">Current School:</label>
+                    <span id="currentSchool"></span>
                 </div>
                 <!-- Country Input -->
                 <div class="form-group">
                     <label>Country</label>
-                    <input type="text" id="countryInput" class="form-control" placeholder="Enter your country">
+                    <input type="text" id="countryInput" class="form-control">
+                    <label for="currentCountry">Current Country:</label>
+                    <span id="currentCountry"></span>
                 </div>
                 <!-- Email Input -->
                 <div class="form-group">
                     <label>Email</label>
-                    <input type="text" id="emailInput" class="form-control" placeholder="Enter your email">
+                    <input type="text" id="emailInput" class="form-control">
+                    <label for="currentEmail">Current Email:</label>
+                    <span id="currentEmail"></span>
                 </div>
                 <!-- About me Input -->
                 <div class="form-group">
                     <label>About me</label>
-                    <input type="text" id="aboutmeInput" class="form-control" placeholder="Tell about yourself">
+                    <input type="text" id="aboutmeInput" class="form-control">
+                    <label for="currentAboutMe">Current About me:</label>
+                    <span id="currentAboutMe"></span>
                 </div>
             </fieldset>
             <div class="d-flex justify-content-end mt-5">
@@ -105,11 +114,11 @@
     <!---------------------------------------------->
 
     <!-- Link to scripts of your own -->
-    <script src="./scripts/editProfile.js"></script>
+    
     <script src="./scripts/firebaseAPI_TEAM10.js"></script>
+    <script src="./scripts/editProfile.js"></script>
     <script src="./scripts/load_skeleton.js"></script>
-    <scripts src="./scripts/logout.js">
-        </script>
+    <scripts src="./scripts/logout.js"></script>
 
 
 </body>

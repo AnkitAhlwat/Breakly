@@ -18,6 +18,63 @@ function chooseFileListener() {
     })
 }
 chooseFileListener();
+function test() {
+    console.log("this is the test")
+    firebase.auth().onAuthStateChanged(user => {
+        console.log("this is the test2")
+    })
+}
+test()
+
+function populateInfo() {
+    
+    firebase.auth().onAuthStateChanged(user => {
+        console.log("on")
+        if (user) {
+            // go and get the logged in user's info from firestore
+            currentUser = db.collection("users").doc(user.uid);
+            console.log(user.uid)
+            currentUser.get()
+                .then(userDoc => {
+                    let userName = userDoc.data().name;
+                    console.log(userName)
+                    let userSchool = userDoc.data().school;
+                    console.log(userSchool)
+                    let userCountry = userDoc.data().country;
+                    console.log(userCountry)
+                    let userEmail = userDoc.data().email;
+                    console.log(userEmail)
+                    let userAboutMe = userDoc.data().aboutme;
+                    console.log(userAboutMe)
+                    let picUrl = userDoc.data().profilePic;
+                    console.log(picUrl)
+                    // assign the user info into the appropriate id's
+                        document.getElementById("currentName").innerHTML = userName;
+                
+                        document.getElementById("currentSchool").innerHTML = userSchool;
+                    
+                        console.log(userCountry)
+                        document.getElementById("currentCountry").innerHTML = userCountry;
+
+                        console.log(userEmail)
+                        document.getElementById("currentEmail").innerHTML = userEmail;
+                
+                        console.log(userAboutMe)
+                        document.getElementById("currentAboutMe").innerHTML = userAboutMe;
+
+
+                    $("#mypic-goes-here").attr("src", picUrl);
+
+                })
+
+        } else {
+            console.log("no user is logged in")
+        }
+    });
+
+
+}
+populateInfo();
 
 function saveUserInfo() {
     firebase.auth().onAuthStateChanged(function (user) {
@@ -63,64 +120,7 @@ function editUserInfo() {
     document.getElementById('personalInfoFields').disabled = false;
 }
 
-function populateInfo() {
-    firebase.auth().onAuthStateChanged(user => {
-        if (user) {
-            // go and get the logged in user's info from firestore
-            currentUser = db.collection("users").doc(user.uid);
 
-            currentUser.get()
-                .then(userDoc => {
-                    let userName = userDoc.data().name;
-                    console.log(userName)
-                    let userSchool = userDoc.data().school;
-                    console.log(userSchool)
-                    let userCountry = userDoc.data().country;
-                    console.log(userCountry)
-                    let userEmail = userDoc.data().email;
-                    console.log(userEmail)
-                    let userAboutMe = userDoc.data().aboutme;
-                    console.log(userAboutMe)
-                    let picUrl = userDoc.data().profilePic;
-                    console.log(picUrl)
-                    // assign the user info into the appropriate id's
-                    if (userName != null) {
-                        document.getElementById("nameInput").value = userName;
-                    }
-                    if (userSchool != null) {
-                        document.getElementById("schoolInput").value = userSchool;
-                    }
-                    if (userCountry != null) {
-                        console.log(userCountry)
-                        document.getElementById("countryInput").value = userCountry;
-                    }
-                    if (userEmailer != null) {
-                        console.log(userEmail)
-                        document.getElementById("emailInput").value = userEmail;
-                    }
-                    if (userAboutMe != null) {
-                        console.log(userAboutMe)
-                        document.getElementById("aboutmeInput").value = userAboutMe;
-
-                    }
-                    if (picUrl != null) {
-                        console.log(picUrl);
-
-                        $("#mypic-goes-here").attr("src", picUrl);
-                    }
-                    else
-                        console.log("picURL is null");
-                })
-
-        } else {
-            console.log("no user is logged in")
-        }
-    }
-
-    )
-
-}
-populateInfo();
 
 // the functionality of this function is incomplete in the following ways:
 // - users data cannot be populated into the appropriate forms

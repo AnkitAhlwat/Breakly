@@ -1,32 +1,50 @@
-function getUserData() {
-
+function populateInfo() {
+    
     firebase.auth().onAuthStateChanged(user => {
-
+        console.log("on")
         if (user) {
-            // get access to the current users data from the firestore
-            currentUser = db.collection("users").doc(user.uid)
+            // go and get the logged in user's info from firestore
+            currentUser = db.collection("users").doc(user.uid);
+            console.log(user.uid)
             currentUser.get()
-                .then(userDoc => {
-                    let picUrl = userDoc.data().profilePic;
+            .then(userDoc => {
+                let userName = userDoc.data().name;
+                console.log(userName)
+                let userSchool = userDoc.data().school;
+                console.log(userSchool)
+                let userCountry = userDoc.data().country;
+                console.log(userCountry)
+                let userEmail = userDoc.data().email;
+                console.log(userEmail)
+                let breakCounter = userDoc.data().break_counter
+                console.log(breakCounter)
+                let userAboutMe = userDoc.data().aboutme;
+                console.log(userAboutMe)
+                let picUrl = userDoc.data().profilePic;
+                console.log(picUrl)
+                // assign the user info into the appropriate id's
+                document.getElementById("name").innerHTML = userName;
 
-                    console.log("The pic url is", picUrl);
-                    // cannot get the image from firebase storage
-                    $("#mypic-goes-here").attr("src", picUrl);
+                document.getElementById("break_counter").innerHTML = breakCounter;
+        
+                document.getElementById("school").innerHTML = userSchool;
 
+                document.getElementById("country").innerHTML = userCountry;
 
-                    // populate the users data into the the profile card into profile.html
-                    document.getElementById("name").innerHTML = userDoc.data().name
-                    console.log("The user's name is:", userDoc.data().name)
-                    document.getElementById("school").innerHTML = userDoc.data().school
-                    console.log("The user's school is:", userDoc.data().school)
-                    document.getElementById("email").innerHTML = userDoc.data().email
-                    console.log("The user's email is:", userDoc.data().email)
-                    document.getElementById("break_counter").innerHTML = userDoc.data().break_counter
-                    console.log("The user's current break counter is at:", userDoc.data().break_counter)
+                document.getElementById("email").innerHTML = userEmail;
+            
+                document.getElementById("aboutme").innerHTML = userAboutMe;
 
+                $("#mypic-goes-here").attr("src", picUrl);
 
-                })
+            })
+
+        } else {
+            console.log("no user is logged in")
         }
     });
+
+
 }
-getUserData();// invoke the function
+populateInfo();
+
