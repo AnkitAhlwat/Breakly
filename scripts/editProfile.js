@@ -65,7 +65,7 @@ function editUserInfo() {
 function populateInfo() {
     firebase.auth().onAuthStateChanged(user => {
             if (user) {
-                // go and get the current user info from firestore
+                // go and get the logged in user's info from firestore
                 currentUser = db.collection("users").doc(user.uid);
 
                 currentUser.get()
@@ -82,7 +82,7 @@ function populateInfo() {
                         console.log(userAboutMe)
                         let picUrl = userDoc.data().profilePic;
                         console.log(picUrl)
-                        // assign teh user info into the appropriate id's
+                        // assign the user info into the appropriate id's
                         if (userName != null){
                             document.getElementById("nameInput").value = userName;
                         }

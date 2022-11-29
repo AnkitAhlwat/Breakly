@@ -1,5 +1,3 @@
-///initial set time get data from database for user start time 
-
 ///right after pressing the submit button on set reminder page
 function calculateIntervals() {
 
