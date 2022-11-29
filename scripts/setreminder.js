@@ -1,5 +1,6 @@
 var user = firebase.auth().currentUser;
 
+//function to write and update data to the firestore from the set reminder form
 function write_data(event) {
     event.preventDefault();
     firebase.auth().onAuthStateChanged(user => {
@@ -35,7 +36,7 @@ function write_data(event) {
     })
 }
 
-
+//when users click on the set reminder button, it will call the write_data function
 function setup() {
     $('#log_button').click(write_data);
 }

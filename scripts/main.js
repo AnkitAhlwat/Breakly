@@ -1,3 +1,4 @@
+//will insert specific username into spans in the html to allow personalized greeting
 function insertName() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
