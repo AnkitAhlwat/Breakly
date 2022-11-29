@@ -60,7 +60,7 @@ function populateInfo() {
                         document.getElementById("currentEmail").innerHTML = userEmail;
                 
                         console.log(userAboutMe)
-                        document.getElementById("currentAboutMe").innerHTML = userAboutMe;
+                        document.getElementById("currentAboutme").innerHTML = userAboutMe;
 
 
                     $("#mypic-goes-here").attr("src", picUrl);
