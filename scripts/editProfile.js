@@ -19,19 +19,6 @@ function chooseFileListener() {
     })
 }
 chooseFileListener();
-<<<<<<< HEAD
-//
-function test() {
-    console.log("this is the test")
-    firebase.auth().onAuthStateChanged(user => {
-        console.log("this is the test2")
-    })
-}
-test()
-//
-=======
-
->>>>>>> 6c8dec6c4643ff80ced4a7f8f97eed5ac9a5b6db
 function populateInfo() {
 
     firebase.auth().onAuthStateChanged(user => {
@@ -56,25 +43,11 @@ function populateInfo() {
                     console.log(picUrl)
                     // assign the user info into the appropriate id's
                     document.getElementById("currentName").innerHTML = userName;
-<<<<<<< HEAD
-
-                    document.getElementById("currentSchool").innerHTML = userSchool;
-
-                    console.log(userCountry)
-                    document.getElementById("currentCountry").innerHTML = userCountry;
-
-                    console.log(userEmail)
-                    document.getElementById("currentEmail").innerHTML = userEmail;
-
-                    console.log(userAboutMe)
-                    document.getElementById("currentAboutme").innerHTML = userAboutMe;
-=======
             
                     document.getElementById("currentSchool").innerHTML = userSchool;
                 
                     console.log(userCountry)
                     document.getElementById("currentCountry").innerHTML = userCountry;
->>>>>>> 6c8dec6c4643ff80ced4a7f8f97eed5ac9a5b6db
 
                     console.log(userEmail)
                     document.getElementById("currentEmail").innerHTML = userEmail;
