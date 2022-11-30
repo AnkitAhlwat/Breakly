@@ -1,7 +1,9 @@
-// this function will allow the user to edit/ save the users data and display the users current information under respectively named forms
+// these function will allow the user to edit/ save the users data and display the users current information under respectively named forms
+
 const storage = firebase.storage() // global constant variable to get access to the storage section of firebase
 var ImageFile;      //global variable to store the File Object reference
-//
+
+// will attach a listener to the image
 function chooseFileListener() {
     const fileInput = document.getElementById("mypic-input");   // pointer #1
     const image = document.getElementById("mypic-goes-here");   // pointer #2
@@ -19,6 +21,8 @@ function chooseFileListener() {
     })
 }
 chooseFileListener();
+
+// will display the users information under each of the appropriate form fields
 function populateInfo() {
 
     firebase.auth().onAuthStateChanged(user => {
@@ -69,6 +73,7 @@ function populateInfo() {
 }
 populateInfo();
 
+// Will save the users informaton into the firestore, into the appropriate fields
 function saveUserInfo() {
     firebase.auth().onAuthStateChanged(function (user) {
         //will create a url referencing to the saved image, in the firebases storage
@@ -109,14 +114,8 @@ function saveUserInfo() {
     })
 }
 
+// allows the user to edit their information
 function editUserInfo() {
     //Enable the form fields
     document.getElementById('personalInfoFields').disabled = false;
 }
-
-
-
-// the functionality of this function is incomplete in the following ways:
-// - users data cannot be populated into the appropriate forms
-// - the users saved profile picture cannot be used through the firebase URL in the profile.html
-//   (pulled from firebase through getUserData.js) file
