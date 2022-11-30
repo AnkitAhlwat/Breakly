@@ -1,6 +1,6 @@
 const storage = firebase.storage()
 var ImageFile;      //global variable to store the File Object reference
-
+//
 function chooseFileListener() {
     const fileInput = document.getElementById("mypic-input");   // pointer #1
     const image = document.getElementById("mypic-goes-here");   // pointer #2
@@ -18,6 +18,7 @@ function chooseFileListener() {
     })
 }
 chooseFileListener();
+//
 function test() {
     console.log("this is the test")
     firebase.auth().onAuthStateChanged(user => {
@@ -25,9 +26,9 @@ function test() {
     })
 }
 test()
-
+//
 function populateInfo() {
-    
+
     firebase.auth().onAuthStateChanged(user => {
         console.log("on")
         if (user) {
@@ -49,18 +50,18 @@ function populateInfo() {
                     let picUrl = userDoc.data().profilePic;
                     console.log(picUrl)
                     // assign the user info into the appropriate id's
-                        document.getElementById("currentName").innerHTML = userName;
-                
-                        document.getElementById("currentSchool").innerHTML = userSchool;
-                    
-                        console.log(userCountry)
-                        document.getElementById("currentCountry").innerHTML = userCountry;
+                    document.getElementById("currentName").innerHTML = userName;
 
-                        console.log(userEmail)
-                        document.getElementById("currentEmail").innerHTML = userEmail;
-                
-                        console.log(userAboutMe)
-                        document.getElementById("currentAboutme").innerHTML = userAboutMe;
+                    document.getElementById("currentSchool").innerHTML = userSchool;
+
+                    console.log(userCountry)
+                    document.getElementById("currentCountry").innerHTML = userCountry;
+
+                    console.log(userEmail)
+                    document.getElementById("currentEmail").innerHTML = userEmail;
+
+                    console.log(userAboutMe)
+                    document.getElementById("currentAboutme").innerHTML = userAboutMe;
 
 
                     $("#mypic-goes-here").attr("src", picUrl);

@@ -1,5 +1,5 @@
 var user = firebase.auth().currentUser;
-
+// 
 function goalTracker() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
