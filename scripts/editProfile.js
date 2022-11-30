@@ -3,7 +3,7 @@
 const storage = firebase.storage() // global constant variable to get access to the storage section of firebase
 var ImageFile;      //global variable to store the File Object reference
 
-// will attach a listener to the image
+//function will attach a listener to the image to allow it to be used and set in user profile
 function chooseFileListener() {
     const fileInput = document.getElementById("mypic-input");   // pointer #1
     const image = document.getElementById("mypic-goes-here");   // pointer #2
@@ -22,13 +22,13 @@ function chooseFileListener() {
 }
 chooseFileListener();
 
-// will display the users information under each of the appropriate form fields
+//function will display the users information under each of the appropriate form fields
 function populateInfo() {
 
     firebase.auth().onAuthStateChanged(user => {
         console.log("on")
         if (user) {
-            // go and get the logged in user's info from firestore
+            // go and get the logged in user's info from firestore and store the users information into variables
             currentUser = db.collection("users").doc(user.uid);
             console.log(user.uid)
             currentUser.get()
@@ -73,7 +73,7 @@ function populateInfo() {
 }
 populateInfo();
 
-// Will save the users informaton into the firestore, into the appropriate fields
+//function to write the users information into appropriate fields in firestore
 function saveUserInfo() {
     firebase.auth().onAuthStateChanged(function (user) {
         //will create a url referencing to the saved image, in the firebases storage
@@ -114,7 +114,7 @@ function saveUserInfo() {
     })
 }
 
-// allows the user to edit their information
+//function allows the user to edit their information
 function editUserInfo() {
     //Enable the form fields
     document.getElementById('personalInfoFields').disabled = false;

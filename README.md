@@ -55,7 +55,7 @@ It has the following subfolders and files:
     /contact_us.js           # Script that writes user contact_us form data into firestore
     /editProfile.js          # Script which takes user information and updates their user info fields in firestore
     /firebaseAPI_TEAM10.js   # Script which links to firebase firestore
-    /getUserData.js          # Script which gets the user data????
+    /getUserData.js          # Script which gets the user data from firestore and populates the edit_profile.html page
     /load_skeleton.js        # Script that loads the top and bottom nav bars to each webpage
     /logout.js               # Script which allows users to logout
     /main.js                 # Script which gets the user name to populate in span

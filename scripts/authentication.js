@@ -8,8 +8,8 @@ var uiConfig = {
             if (authResult.additionalUserInfo.isNewUser) {         //if new user
                 db.collection("users").doc(user.uid).set({         //write to firestore. We are using the UID for the ID in users collection
                     name: user.displayName,                        //for every user, will have these default fields
-                    email: user.email,                         
-                    country: "Canada",                       
+                    email: user.email,
+                    country: "Canada",
                     school: "BCIT",
                     aboutme: " ",
                     reminders: {
@@ -50,6 +50,7 @@ var uiConfig = {
     privacyPolicyUrl: '<your-privacy-policy-url>'
 };
 
+//function to hide the login button after user clicks on it and shows login container afterwards
 function login_option() {
     console.log("The login button has been clicked!");
     // Hide the login button now and show authentication
