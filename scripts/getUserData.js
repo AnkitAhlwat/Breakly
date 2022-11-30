@@ -1,3 +1,4 @@
+// will populate the user's information into the profile card in profile.hmtl
 function populateInfo() {
     
     firebase.auth().onAuthStateChanged(user => {

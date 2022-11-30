@@ -1,4 +1,5 @@
-const storage = firebase.storage()
+// this function will allow the user to edit/ save the users data and display the users current information under respectively named forms
+const storage = firebase.storage() // global constant variable to get access to the storage section of firebase
 var ImageFile;      //global variable to store the File Object reference
 
 function chooseFileListener() {
