@@ -71,6 +71,7 @@ populateInfo();
 
 function saveUserInfo() {
     firebase.auth().onAuthStateChanged(function (user) {
+        //will create a url referencing to the saved image, in the firebases storage
         var storageRef = storage.ref("images/" + user.uid + ".jpg");
 
         //Asynch call to put File Object (global variable ImageFile) onto Cloud
