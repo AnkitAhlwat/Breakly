@@ -64,11 +64,3 @@ It has the following subfolders and files:
     /weekly.js               # Script that reads users progress daily from firestore to give them an overall weekly summary
 ├── styles                   # Folder for styles
     /style.css               # Sets the icon sizes and colours
-
-Firebase hosting files:
-├── .firebaserc...
-
-Tips for file naming files and folders:
-
-* use lowercase with no spaces
-* use dashes (not underscore) for word separation
