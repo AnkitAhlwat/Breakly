@@ -43,20 +43,20 @@ function populateInfo() {
                     let picUrl = userDoc.data().profilePic;
                     console.log(picUrl)
                     // assign the user info into the appropriate id's
-                        document.getElementById("currentName").innerHTML = userName;
+                    document.getElementById("currentName").innerHTML = userName;
+            
+                    document.getElementById("currentSchool").innerHTML = userSchool;
                 
-                        document.getElementById("currentSchool").innerHTML = userSchool;
-                    
-                        console.log(userCountry)
-                        document.getElementById("currentCountry").innerHTML = userCountry;
+                    console.log(userCountry)
+                    document.getElementById("currentCountry").innerHTML = userCountry;
 
-                        console.log(userEmail)
-                        document.getElementById("currentEmail").innerHTML = userEmail;
-                
-                        console.log(userAboutMe)
-                        document.getElementById("currentAboutme").innerHTML = userAboutMe;
+                    console.log(userEmail)
+                    document.getElementById("currentEmail").innerHTML = userEmail;
+            
+                    console.log(userAboutMe)
+                    document.getElementById("currentAboutme").innerHTML = userAboutMe;
 
-
+                    // show the users profile picture on the page
                     $("#mypic-goes-here").attr("src", picUrl);
 
                 })
