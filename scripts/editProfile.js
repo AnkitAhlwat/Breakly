@@ -19,13 +19,6 @@ function chooseFileListener() {
     })
 }
 chooseFileListener();
-function test() {
-    console.log("this is the test")
-    firebase.auth().onAuthStateChanged(user => {
-        console.log("this is the test2")
-    })
-}
-test()
 
 function populateInfo() {
     
