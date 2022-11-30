@@ -1,4 +1,4 @@
-
+const storage = firebase.storage()
 var ImageFile;      //global variable to store the File Object reference
 
 function chooseFileListener() {
