@@ -1,6 +1,6 @@
-//function to check if user is logged in so they cannot access the features that are specific to logged in users
 var user = firebase.auth().currentUser;
 
+//function to check if user is logged in so they cannot access the features that are specific to logged in users
 function check_login(text) {
     console.log(text)
     firebase.auth().onAuthStateChanged(user => {
