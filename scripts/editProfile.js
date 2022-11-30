@@ -113,10 +113,3 @@ function editUserInfo() {
     //Enable the form fields
     document.getElementById('personalInfoFields').disabled = false;
 }
-
-
-
-// the functionality of this function is incomplete in the following ways:
-// - users data cannot be populated into the appropriate forms
-// - the users saved profile picture cannot be used through the firebase URL in the profile.html 
-//   (pulled from firebase through getUserData.js) file
