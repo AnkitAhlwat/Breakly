@@ -1,5 +1,6 @@
+// will populate the user's information into the profile card in profile.hmtl
 function populateInfo() {
-    
+
     firebase.auth().onAuthStateChanged(user => {
         console.log("on")
         if (user) {
@@ -7,37 +8,37 @@ function populateInfo() {
             currentUser = db.collection("users").doc(user.uid);
             console.log(user.uid)
             currentUser.get()
-            .then(userDoc => {
-                let userName = userDoc.data().name;
-                console.log(userName)
-                let userSchool = userDoc.data().school;
-                console.log(userSchool)
-                let userCountry = userDoc.data().country;
-                console.log(userCountry)
-                let userEmail = userDoc.data().email;
-                console.log(userEmail)
-                let breakCounter = userDoc.data().break_counter
-                console.log(breakCounter)
-                let userAboutMe = userDoc.data().aboutme;
-                console.log(userAboutMe)
-                let picUrl = userDoc.data().profilePic;
-                console.log(picUrl)
-                // assign the user info into the appropriate id's
-                document.getElementById("name").innerHTML = userName;
+                .then(userDoc => {
+                    let userName = userDoc.data().name;
+                    console.log(userName)
+                    let userSchool = userDoc.data().school;
+                    console.log(userSchool)
+                    let userCountry = userDoc.data().country;
+                    console.log(userCountry)
+                    let userEmail = userDoc.data().email;
+                    console.log(userEmail)
+                    let breakCounter = userDoc.data().break_counter
+                    console.log(breakCounter)
+                    let userAboutMe = userDoc.data().aboutme;
+                    console.log(userAboutMe)
+                    let picUrl = userDoc.data().profilePic;
+                    console.log(picUrl)
+                    // assign the user info into the appropriate id's
+                    document.getElementById("name").innerHTML = userName;
 
-                document.getElementById("break_counter").innerHTML = breakCounter;
-        
-                document.getElementById("school").innerHTML = userSchool;
+                    document.getElementById("break_counter").innerHTML = breakCounter;
 
-                document.getElementById("country").innerHTML = userCountry;
+                    document.getElementById("school").innerHTML = userSchool;
 
-                document.getElementById("email").innerHTML = userEmail;
-            
-                document.getElementById("aboutme").innerHTML = userAboutMe;
+                    document.getElementById("country").innerHTML = userCountry;
 
-                $("#mypic-goes-here").attr("src", picUrl);
+                    document.getElementById("email").innerHTML = userEmail;
 
-            })
+                    document.getElementById("aboutme").innerHTML = userAboutMe;
+
+                    $("#mypic-goes-here").attr("src", picUrl);
+
+                })
 
         } else {
             console.log("no user is logged in")

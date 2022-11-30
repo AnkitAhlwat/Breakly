@@ -1,4 +1,6 @@
 ///right after pressing the submit button on set reminder page
+// this function should create an array of time intervals, then will compare the compare to the next 
+// closest interval and then calculate the remaining time until the next reminder
 function calculateIntervals() {
 
   firebase.auth().onAuthStateChanged(user => {
@@ -47,7 +49,7 @@ function calculateIntervals() {
         })
     }
   });
-  // this should create an array of time intervals, then will compare the compare to the next closest interval and then calculate the remaining time until the next reminder
+  
 }
 
 calculateIntervals();

@@ -1,6 +1,7 @@
-const storage = firebase.storage()
+// this function will allow the user to edit/ save the users data and display the users current information under respectively named forms
+const storage = firebase.storage() // global constant variable to get access to the storage section of firebase
 var ImageFile;      //global variable to store the File Object reference
-
+//
 function chooseFileListener() {
     const fileInput = document.getElementById("mypic-input");   // pointer #1
     const image = document.getElementById("mypic-goes-here");   // pointer #2
@@ -18,6 +19,8 @@ function chooseFileListener() {
     })
 }
 chooseFileListener();
+<<<<<<< HEAD
+//
 function test() {
     console.log("this is the test")
     firebase.auth().onAuthStateChanged(user => {
@@ -25,9 +28,12 @@ function test() {
     })
 }
 test()
+//
+=======
 
+>>>>>>> 6c8dec6c4643ff80ced4a7f8f97eed5ac9a5b6db
 function populateInfo() {
-    
+
     firebase.auth().onAuthStateChanged(user => {
         console.log("on")
         if (user) {
@@ -49,20 +55,34 @@ function populateInfo() {
                     let picUrl = userDoc.data().profilePic;
                     console.log(picUrl)
                     // assign the user info into the appropriate id's
-                        document.getElementById("currentName").innerHTML = userName;
+                    document.getElementById("currentName").innerHTML = userName;
+<<<<<<< HEAD
+
+                    document.getElementById("currentSchool").innerHTML = userSchool;
+
+                    console.log(userCountry)
+                    document.getElementById("currentCountry").innerHTML = userCountry;
+
+                    console.log(userEmail)
+                    document.getElementById("currentEmail").innerHTML = userEmail;
+
+                    console.log(userAboutMe)
+                    document.getElementById("currentAboutme").innerHTML = userAboutMe;
+=======
+            
+                    document.getElementById("currentSchool").innerHTML = userSchool;
                 
-                        document.getElementById("currentSchool").innerHTML = userSchool;
-                    
-                        console.log(userCountry)
-                        document.getElementById("currentCountry").innerHTML = userCountry;
+                    console.log(userCountry)
+                    document.getElementById("currentCountry").innerHTML = userCountry;
+>>>>>>> 6c8dec6c4643ff80ced4a7f8f97eed5ac9a5b6db
 
-                        console.log(userEmail)
-                        document.getElementById("currentEmail").innerHTML = userEmail;
-                
-                        console.log(userAboutMe)
-                        document.getElementById("currentAboutme").innerHTML = userAboutMe;
+                    console.log(userEmail)
+                    document.getElementById("currentEmail").innerHTML = userEmail;
+            
+                    console.log(userAboutMe)
+                    document.getElementById("currentAboutme").innerHTML = userAboutMe;
 
-
+                    // show the users profile picture on the page
                     $("#mypic-goes-here").attr("src", picUrl);
 
                 })
