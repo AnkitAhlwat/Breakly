@@ -1,5 +1,6 @@
 var user = firebase.auth().currentUser;
 
+// The function goal tracker will read data from firebase and populate it to the html
 function goalTracker() {
     firebase.auth().onAuthStateChanged(user => {
         // Check if a user is signed in:
