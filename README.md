@@ -27,8 +27,9 @@ Technologies used for this project:
 
 Content of the project folder:
 
+```
  Top level of project folder:  
-├── .gitignore               # Git ignore file  
+├── .gitignore               # Git ignore file  
 ├── contact_us.html          # Contact us form should users have any questions  
 ├── edit_profile.html        # Allows users to modify their information  
 ├── faq.html                 # FAQ page of our site that gives users relevant info  
@@ -36,7 +37,7 @@ Content of the project folder:
 ├── main.html                # After user login, what they will see to prompt them to set reminder  
 ├── profile.html             # Displays user profile  
 ├── setreminder.html         # Set reminder form for users to input data for when they want  
-├── user_page.html           # After user sets reminder, will redirect to this page which tells them when their next break is  
+├── user_page.html           # User homepage
 ├── weekly.html              # Displays users weekly summary of breaks taken  
 └── README.md  
 
@@ -56,13 +57,13 @@ It has the following subfolders and files:
     /contact_us.js           # Script that writes user contact_us form data into firestore  
     /editProfile.js          # Script which takes user information and updates their user info fields in firestore  
     /firebaseAPI_TEAM10.js   # Script which links to firebase firestore  
-    /getUserData.js          # Script which gets the user data from firestore and populates the edit_profile.html page  
+    /getUserData.js          # Script which gets the user data from firestore and populates edit_profile.html page  
     /load_skeleton.js        # Script that loads the top and bottom nav bars to each webpage  
     /logout.js               # Script which allows users to logout  
     /main.js                 # Script which gets the user name to populate in span  
-    /setreminder.js          # Script which grabs the data from the setreminder form and writes in firestore under user document
-    /user_homepage.js        # Script that reads the data from firestore to determine user progress towards their goal  
-    /weekly.js               # Script that reads users progress daily from firestore to give them an overall weekly summary  
+    /setreminder.js          # Script gets data from setreminder form and writes in firestore under user document
+    /user_homepage.js        # Script that reads the data from firestore to determine user progress towards goal  
+    /weekly.js               # Script that reads users progress from firestore to give them an overall weekly summary  
 
 ├── styles                   # Folder for styles  
     /style.css               # Sets the icon sizes and colours  
